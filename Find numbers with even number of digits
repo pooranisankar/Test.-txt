@@ -1,0 +1,26 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+class Solution{
+    public:
+    int findNumbers(vector<int>& nums){
+        int count=0;
+        for(int num:nums){
+            int digits=0;
+            while(num!=0){
+                num /=10;
+                digits++;
+            }
+            if(digits%2==0){
+                count++;
+            }
+        }
+        return count;
+    }
+};
+int main(){
+    Solution sol;
+    vector<int> nums={12,44,7777,8,9,777777};
+    cout<<sol.findNumbers(nums)<<endl;
+    return 0;
+}
